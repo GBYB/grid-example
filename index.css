@@ -1,7 +1,7 @@
 body {
   font-family: "Big Shoulders Display", cursive;
   font-family: "Lexend Deca", sans-serif;
-  background-color: rgba(10, 186, 180, 0.2);
+  background-color: #ffab762d;
 }
 .container {
   height: 100vh;
@@ -12,7 +12,7 @@ body {
   margin: 2%;
 }
 .header {
-  background-color: rgb(10, 186, 181, 0.7);
+  background-color: #fffda2;
   grid-row: 1;
   grid-column-start: 1;
   grid-column-end: 5;
@@ -25,10 +25,11 @@ body {
 #top > a {
   font-size: 1rem;
   text-decoration: none;
-  color: black;
+  color: #ff6363;
 }
+
 .navbar {
-  background-color: rgba(10, 186, 180, 0.5);
+  background-color: #fffda2;
   grid-row: 1;
   grid-column-start: 5;
   grid-column-end: 13;
@@ -48,7 +49,7 @@ body {
 
 .navbar li > a {
   text-decoration: none;
-  color: black;
+  color: #ff6363;
 }
 
 .sidebar {
@@ -60,12 +61,11 @@ body {
 #ad_1 {
   grid-row: 2;
   width: 100%;
-  height: 50%;
+  height: 25%;
   display: block;
 }
 .main {
-  border: 0.0625rem solid;
-  background-color: rgb(10, 186, 181);
+  border: 0.0625rem solid #ffab76;
   grid-row: 2;
   grid-column-start: 4;
   grid-column-end: 13;
@@ -74,18 +74,22 @@ body {
 }
 #sub-main {
   width: 100%;
-  background-color: rgb(10, 186, 181, 0.7);
+  background-color: #fffda2;
 
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 .title {
-  border-bottom: 0.0625rem solid;
+  background-color: #fffda2;
+  border-bottom: 0.0625rem solid #ffab76;
+}
+.title h3 {
+  color: #ff6363;
 }
 .headline {
   height: 100%;
-  border-right: 1px solid;
+  border-right: 1px solid #ffab76;
   margin: 4%;
 }
 #sub-main:last-child .headline {
@@ -99,7 +103,7 @@ body {
 
 .headline h4 a {
   text-decoration: none;
-  color: black;
+  color: #ff6363;
 }
 .ads {
   grid-row: 3;
@@ -115,26 +119,27 @@ body {
   grid-row: 4;
   grid-column-start: 1;
   grid-column-end: 13;
-  background-color: rgb(10, 186, 181, 0.7);
+  background-color: #fffda2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   text-align: center;
+  color: #ff6363;
 }
 .footer > a {
   text-decoration: none;
-  color: black;
+  color: #ff6363;
 }
 .footer > div > a {
   margin-right: 0.5rem;
   text-decoration: none;
-  color: black;
+  color: #ff6363;
 }
 @media screen and (max-width: 4000px) and (min-width: 1921px) {
   .container {
     grid-template-rows: auto 1fr 0.5fr 6rem;
   }
-  .header a h1 {
+  .header a h2 {
     font-size: 2.5rem;
   }
   .navbar {
@@ -162,12 +167,123 @@ body {
     font-size: 1.7rem;
   }
 
-  #ad_2 {
+  .ads {
     width: 100%;
     height: 90%;
   }
 }
-@media screen and (min-width: 769px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    grid-template-rows: 6rem 1fr 0.5fr 6rem;
+  }
+  .header a h2 {
+    font-size: 1.2rem;
+  }
+  .navbar {
+    font-size: 1rem;
+  }
+  #bottom {
+    font-size: 0.8rem;
+  }
+  .logo > svg {
+    height: 0.7rem;
+    width: auto;
+  }
+  .sidebar {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .main {
+    grid-column-start: 4;
+    grid-column-end: 13;
+  }
+  .title h3 {
+    font-size: 0.7rem;
+  }
+  .headline h4 {
+    font-size: 0.7rem;
+  }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) and (min-width: 200px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: 1fr 1fr 0.5fr 1fr 1fr;
+    row-gap: 0.5rem;
+    margin: 0;
+  }
+  .header {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .navbar {
+    grid-row: 1;
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+  .header a h2 {
+    font-size: 0.8rem;
+  }
+  .navbar {
+    font-size: 0.7rem;
+  }
+  .sidebar {
+    grid-row: 2 / span 2;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-column-start: 1;
+    grid-column-end: 5;
+    /* grid-template-rows: repeat(3, auto);
+    grid-column-start: 1;
+    grid-column-end: 4; */
+  }
+  #ad_1:nth-child(1) {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+  }
+  #ad_1:nth-child(2) {
+    grid-row: 2;
+    grid-column: 3 / span 2;
+  }
+  #ad_1:nth-child(3) {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+  }
+  #ad_1:nth-child(4) {
+    grid-row: 3;
+    grid-column: 3 / span 2;
+  }
+  #ad_1 {
+    height: 100%;
+    width: 100%;
+  }
+  .main {
+    border: 0.0625rem solid #ffab76;
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .title h3 {
+    font-size: 0.7rem;
+  }
+  .headline h4 {
+    font-size: 0.7rem;
+  }
+
+  .ads {
+    grid-row: 4;
+  }
+
+  #bottom {
+    grid-row: 5;
+    font-size: 0.7rem;
+  }
+  .logo > svg {
+    height: 0.7rem;
+    width: auto;
+  }
 }
